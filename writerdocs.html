@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="home.css">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="title">Nội Dung Bài Viết</h1>
+
+<div class="container">
+    <form action="/action_page.php">
+        <div class="row">
+
+            <div class="col-75">
+                <div class="row">
+                    <div class="col-25">
+                        <label><b>Tiêu Đề</b></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="myInput" name="myTitle" oninput="myFuntion()" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="myLink"><b>Liên kết tĩnh</b></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="myLink" name="myLink" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Nội dung</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject"  style="height:200px"></textarea>
+                    </div>
+
+                    <div class="col-75">
+                        <label class="contai">Đăng Ngay
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="contai bnt-2">Đặt Lịch
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Đăng Bài">
+                    <input type="button" onclick="funtionReset()" value = "Reset">
+                </div>
+
+            </div>
+            <div class="col-25">
+                <h2>Thông tin bổ sung</h2>
+                Email: <br>
+                <input type="text" name="email" placeholder=" Nhập Email...."> <br>
+                Số Điện Thoại: <br>
+                <input type="text" name="phone" placeholder=" Nhập số điện thoại....">
+            </div>
+
+      </div>
+
+
+
+    </form>
+
+
+</div>
+<!--<script>-->
+<!--    function myText() {-->
+<!--        let getString = document.getElementById("myInput");-->
+<!--        let myLink = "http://localhost/wordpress/2017/03/23/";-->
+<!--        let  str = updateChange(getString);-->
+<!--        document.getElementById("myLink").innerHTML = myLink + str;-->
+
+<!--    }-->
+
+<!--</script>-->
+
+</body>
+</html>
