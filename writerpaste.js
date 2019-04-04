@@ -17,10 +17,10 @@ function updateChange(alias) {
 }
 
 function myFuntion() {
-     let getString = document.getElementById("myInput").value;
+     let getString = document.getElementById('input').value;
      let myLink = "http://localhost/wordpress/2017/03/23/";
      let  str = updateChange(getString);
-     document.getElementById("myLink").value = myLink + str;
+     document.getElementById('myLink').innerHTML = myLink + str;
 
 }
 
