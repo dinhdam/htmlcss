@@ -36,32 +36,42 @@
                         <label for="subject">Nội dung</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="subject" name="subject"  style="height:200px"></textarea>
-                    </div>
-
-                    <div class="col-75">
-                        <label class="contai">Đăng Ngay
-                            <input type="radio" checked="checked" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="contai bnt-2">Đặt Lịch
-                            <input type="radio" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
+                        <textarea id="subject" name="textContain"  style="height:200px" minlength="20"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <input type="submit" value="Đăng Bài">
-                    <input type="button" onclick="funtionReset()" value = "Reset">
+                    <div class="col-25">
+                        <label ><b>Lịch đăng</b></label>
+                    </div>
+                    <div class="col-75">
+                        <input id="postNow" type="radio" name="postStatus" value="postNow" checked>Đăng ngay
+                        <input id="postLater"type="radio" name="postStatus" value="postLater" >Đặt lịch
+                        <input id="dateTime" type="dateTime" name="bdaytime" placeholder="dd/mm/yyyy" disabled >
+
+                    </div>
+                </div>
+                <div class="row">
+                    <from id="mySubmit">
+                    <input type="submit" value="Đăng Bài" onclick="functionSubmit()">
+                    </from>
+                    <from id="myFrom">
+                    <input type="reset" onclick="funtionReset()" value = "Reset">
+                    </from>
                 </div>
 
             </div>
             <div class="col-25">
                 <h2>Thông tin bổ sung</h2>
+
                 Email: <br>
-                <input type="text" name="email" placeholder=" Nhập Email...."> <br>
-                Số Điện Thoại: <br>
-                <input type="text" name="phone" placeholder=" Nhập số điện thoại....">
+                <input type="email" name="email" placeholder=" Nhập Email...." required> <br>
+                <span class="validity"></span>
+
+                <from id="myPhone">
+                    Số Điện Thoại: <br>
+                <input type="tel" name="telNo" id="telNo" placeholder="Nhập Số Điện Thoại...." required pattern="[0-9]{3}[0-9]{4}[0-9]{3}" >
+                    <span class="validity"></span>
+                </from>
             </div>
 
       </div>
@@ -72,16 +82,7 @@
 
 
 </div>
-<!--<script>-->
-<!--    function myText() {-->
-<!--        let getString = document.getElementById("myInput");-->
-<!--        let myLink = "http://localhost/wordpress/2017/03/23/";-->
-<!--        let  str = updateChange(getString);-->
-<!--        document.getElementById("myLink").innerHTML = myLink + str;-->
 
-<!--    }-->
-
-<!--</script>-->
 
 </body>
 </html>

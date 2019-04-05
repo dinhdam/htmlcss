@@ -11,29 +11,36 @@ function updateChange(alias) {
     str = str.replace(/đ/g,"d");
     str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
     str = str.replace(/ + /g," ");
+    str = str.split(/\s|_|(?=[A-Z])/).join('-');
     str = str.trim();
     return str;
 
 }
 
 function myFuntion() {
-     let getString = document.getElementById('input').value;
+     let getString = document.getElementById('myInput').value;
      let myLink = "http://localhost/wordpress/2017/03/23/";
-     let  str = updateChange(getString);
-     document.getElementById('myLink').value = myLink + str;
+     let  str = updateChange(getString).toLowerCase();
+     document.getElementById('myLink').value = myLink + str ;
 
 }
 
 
-// function allWriter(inputtxt){
-//     let banner = document.getElementById("subject")
-//     let charWriter = /^[A-Za-z]+$/.test(banner);
-//     if(charWriter){
-//         alert('Your name have accepted : you can try another');
-//         return true;
-//     }else {
-//         alert('Please input alphabet characters only');
-//         return false;
-//     }
-//
-// }
+function allWriter(inputtxt){
+    let banner = document.getElementById("subject")
+    let charWriter = /^[A-Za-z]+$/.test(banner);
+    if(charWriter){
+        alert('Your name have accepted : you can try another');
+        return true;
+    }else {
+        alert('Please input alphabet characters only');
+        return false;
+    }
+
+}
+function functionReset() {
+    document.getElementById("myFrom").reset();
+}
+function functionSubmit() {
+    document.getElementById("mySubmit").submit();
+}
