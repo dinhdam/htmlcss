@@ -11,7 +11,7 @@
 <h1 class="title">Nội Dung Bài Viết</h1>
 
 <div class="container">
-    <form action="/action_page.php">
+    <form>
         <div class="row">
 
             <div class="col-75">
@@ -51,12 +51,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <from id="mySubmit">
                     <input type="submit" value="Đăng Bài" onclick="functionSubmit()">
-                    </from>
-                    <from id="myFrom">
+
+<!--                    <form id="myFrom">-->
                     <input type="reset" onclick="funtionReset()" value = "Reset">
-                    </from>
+<!--                    </form>-->
                 </div>
 
             </div>
@@ -67,14 +66,21 @@
                 <input type="email" name="email" placeholder=" Nhập Email...." required> <br>
                 <span class="validity"></span>
 
-                <from id="myPhone">
+                <form id="myPhone">
                     Số Điện Thoại: <br>
                 <input type="tel" name="telNo" id="telNo" placeholder="Nhập Số Điện Thoại...." required pattern="[0-9]{3}[0-9]{4}[0-9]{3}" >
                     <span class="validity"></span>
-                </from>
+                </form>
+
+                <div id="add-element">
+                   <br><br>Thẻ Đánh Dấu:
+                    <input type="text" id="input" placeholder="Nhập vào thể cần thêm :" >
+                    <input  class="btn" type="button" name="add" value="Add" onclick="Add_Element();"></input>
+                </div>
+                <div id="all_product"></div>
+            </div>
             </div>
 
-      </div>
 
 
 
