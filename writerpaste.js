@@ -48,25 +48,38 @@ function functionSubmit() {
 }
 
 let arr = [];
-let end = 0;
 function Add_Element() {
     let input = document.getElementById("input");
     let result = document.getElementById("all_product");
-    for (let i in arr) {
-        if (end > arr.length) {
-            end++;
-            let box = "<div class='box'> <strong>" + (input.value).replace(/ +/g, "").toLowerCase() + "</strong>"
-                + "<input class='btn' type='button' name='add' value='✖' onclick='Remove_Element(this);'>"
-                + "</div>";
 
-            result.innerHTML += box;
-            input.value = "";
+    let temp = input.value;
+    temp = temp.replace(/ +/g, "").toLowerCase();//loc chuoi nhap vao
 
-        }else if(input === (input.value).replace(/ +/g, "").toLowerCase() ){
-            alert("phan tu da dc tao")
+    let isExisted = false;//Co trung nhau hay khong
+
+    if(arr.length>0){//neu mang co ton tai phan tu ben trong
+
+
+        for(let str in arr){
+            if(temp===str){//neu chuoi nhap vao bang 1 phan tu bat ky trong mang
+                isExisted = true;//co trung nhau
+                alert("phan tu da dc tao")
+            }
         }
     }
 
+    if(isExisted==false)//neu khong trung nhau
+    {
+        let box = "<div class='box'> <strong>" + (input.value).replace(/ +/g, "").toLowerCase() + "</strong>"
+            + "<input class='btn' type='button' name='add' value='✖' onclick='Remove_Element(this);'>"
+            + "</div>";
+
+        result.innerHTML += box;
+
+        arr.push(temp);//them phan tu vao trong mang
+
+        input.value = "";
+    }
 }
 
 function Remove_Element(elm) {
